@@ -30,18 +30,17 @@ public class ColorGeneratorForm extends javax.swing.JFrame {
 //        HexField.putClientProperty(FlatClientProperties.STYLE, "arc:23");
         copyButton.putClientProperty(FlatClientProperties.STYLE, "arc:23");
     }
-    
-    private Color getContrastingColor(Color backgroundColor) {
-    // Calculate the brightness of the background color
-    int brightness = (int) Math.sqrt(
-        backgroundColor.getRed() * backgroundColor.getRed() * 0.241 +
-        backgroundColor.getGreen() * backgroundColor.getGreen() * 0.691 +
-        backgroundColor.getBlue() * backgroundColor.getBlue() * 0.068
-    );
-    // Return black or white text color based on brightness
-    return brightness > 130 ? Color.BLACK : Color.WHITE;
-}
 
+    private Color getContrastingColor(Color backgroundColor) {
+        // Calculate the brightness of the background color
+        int brightness = (int) Math.sqrt(
+                backgroundColor.getRed() * backgroundColor.getRed() * 0.241
+                + backgroundColor.getGreen() * backgroundColor.getGreen() * 0.691
+                + backgroundColor.getBlue() * backgroundColor.getBlue() * 0.068
+        );
+        // Return black or white text color based on brightness
+        return brightness > 130 ? Color.BLACK : Color.WHITE;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -261,15 +260,14 @@ public class ColorGeneratorForm extends javax.swing.JFrame {
     }//GEN-LAST:event_copyButtonActionPerformed
 
     private void applyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_applyButtonActionPerformed
-        // Apply palette colors to other UI components
-        generateButton.setBackground(color1Panel.getBackground());
-        generateButton.setForeground(Color.WHITE);
+        applyButton.setBackground(color1Panel.getBackground());
+        applyButton.setForeground(getContrastingColor(applyButton.getBackground()));
 
-        applyButton.setBackground(color2Panel.getBackground());
-        applyButton.setForeground(Color.WHITE);
+        resetButton.setBackground(color2Panel.getBackground());
+        resetButton.setForeground(getContrastingColor(resetButton.getBackground()));
 
-        resetButton.setBackground(color3Panel.getBackground());
-        resetButton.setForeground(Color.WHITE);
+        generateButton.setBackground(color3Panel.getBackground());
+        generateButton.setForeground(getContrastingColor(generateButton.getBackground()));
 
         HexField.setForeground(colorPanel.getBackground()); // Contrast text with base color
 
