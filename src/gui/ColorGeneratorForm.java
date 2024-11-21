@@ -60,7 +60,7 @@ public class ColorGeneratorForm extends javax.swing.JFrame {
         color1Panel = new javax.swing.JPanel();
         color2Panel = new javax.swing.JPanel();
         color3Panel = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        colorPanel2 = new javax.swing.JPanel();
         applyButton = new javax.swing.JButton();
         resetButton = new javax.swing.JButton();
         color1Field = new javax.swing.JTextField();
@@ -133,7 +133,7 @@ public class ColorGeneratorForm extends javax.swing.JFrame {
         color1Panel.setLayout(color1PanelLayout);
         color1PanelLayout.setHorizontalGroup(
             color1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 157, Short.MAX_VALUE)
+            .addGap(0, 163, Short.MAX_VALUE)
         );
         color1PanelLayout.setVerticalGroup(
             color1PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -146,7 +146,7 @@ public class ColorGeneratorForm extends javax.swing.JFrame {
         color2Panel.setLayout(color2PanelLayout);
         color2PanelLayout.setHorizontalGroup(
             color2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 157, Short.MAX_VALUE)
+            .addGap(0, 163, Short.MAX_VALUE)
         );
         color2PanelLayout.setVerticalGroup(
             color2PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,7 +159,7 @@ public class ColorGeneratorForm extends javax.swing.JFrame {
         color3Panel.setLayout(color3PanelLayout);
         color3PanelLayout.setHorizontalGroup(
             color3PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 157, Short.MAX_VALUE)
+            .addGap(0, 163, Short.MAX_VALUE)
         );
         color3PanelLayout.setVerticalGroup(
             color3PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -185,52 +185,73 @@ public class ColorGeneratorForm extends javax.swing.JFrame {
         });
 
         color1Field.setEditable(false);
-        color1Field.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        color1Field.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         color1Field.setBorder(null);
 
         color2Field.setEditable(false);
-        color2Field.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        color2Field.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         color2Field.setBorder(null);
 
         color3Field.setEditable(false);
-        color3Field.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        color3Field.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         color3Field.setBorder(null);
 
         jButton1.setText("Copy");
+        jButton1.setToolTipText("Click to copy Color 1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Copy");
+        jButton2.setToolTipText("Click to copy Color 2");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Copy");
+        jButton3.setToolTipText("Click to copy Color 3");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout colorPanel2Layout = new javax.swing.GroupLayout(colorPanel2);
+        colorPanel2.setLayout(colorPanel2Layout);
+        colorPanel2Layout.setHorizontalGroup(
+            colorPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, colorPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(resetButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(applyButton)
                 .addGap(17, 17, 17))
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(colorPanel2Layout.createSequentialGroup()
                 .addComponent(color1Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(color2Field)
+                .addComponent(color2Field, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(color3Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton3)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+
+        colorPanel2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {color1Field, color2Field, color3Field});
+
+        colorPanel2Layout.setVerticalGroup(
+            colorPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, colorPanel2Layout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(colorPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(color2Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(color1Field, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(color3Field, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -238,13 +259,13 @@ public class ColorGeneratorForm extends javax.swing.JFrame {
                     .addComponent(jButton2)
                     .addComponent(jButton3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(colorPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(applyButton)
                     .addComponent(resetButton))
                 .addContainerGap())
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {color1Field, color2Field, color3Field});
+        colorPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {color1Field, color2Field, color3Field});
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -252,7 +273,7 @@ public class ColorGeneratorForm extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(colorPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(palettePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(colorPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -261,7 +282,7 @@ public class ColorGeneratorForm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(palettePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(colorPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -356,6 +377,33 @@ public class ColorGeneratorForm extends javax.swing.JFrame {
 
     }//GEN-LAST:event_resetButtonActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String hexCode = color1Field.getText(); // Get the hex code from the label
+        StringSelection stringSelection = new StringSelection(hexCode);
+        Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+        clipboard.setContents(stringSelection, null);
+
+        Notifications.getInstance().show(Notifications.Type.SUCCESS, Notifications.Location.TOP_CENTER, "Hex code copied to clipboard: " + hexCode + " Copied");
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String hexCode = color2Field.getText(); // Get the hex code from the label
+        StringSelection stringSelection = new StringSelection(hexCode);
+        Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+        clipboard.setContents(stringSelection, null);
+
+        Notifications.getInstance().show(Notifications.Type.SUCCESS, Notifications.Location.TOP_CENTER, "Hex code copied to clipboard: " + hexCode + " Copied");
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        String hexCode = color3Field.getText(); // Get the hex code from the label
+        StringSelection stringSelection = new StringSelection(hexCode);
+        Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+        clipboard.setContents(stringSelection, null);
+
+        Notifications.getInstance().show(Notifications.Type.SUCCESS, Notifications.Location.TOP_CENTER, "Hex code copied to clipboard: " + hexCode + " Copied");
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -381,13 +429,13 @@ public class ColorGeneratorForm extends javax.swing.JFrame {
     private javax.swing.JTextField color3Field;
     private javax.swing.JPanel color3Panel;
     private javax.swing.JPanel colorPanel;
+    private javax.swing.JPanel colorPanel2;
     private javax.swing.JButton copyButton;
     private javax.swing.JButton generateButton;
     private javax.swing.JLabel hexLabel;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel palettePanel;
     private javax.swing.JButton resetButton;
     // End of variables declaration//GEN-END:variables
