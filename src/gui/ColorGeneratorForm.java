@@ -260,6 +260,8 @@ public class ColorGeneratorForm extends javax.swing.JFrame {
     }//GEN-LAST:event_copyButtonActionPerformed
 
     private void applyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_applyButtonActionPerformed
+        hexLabel.setForeground(getContrastingColor(colorPanel.getBackground()));
+        
         applyButton.setBackground(color1Panel.getBackground());
         applyButton.setForeground(getContrastingColor(applyButton.getBackground()));
 
