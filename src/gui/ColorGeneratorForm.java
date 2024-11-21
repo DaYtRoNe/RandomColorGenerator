@@ -236,8 +236,6 @@ public class ColorGeneratorForm extends javax.swing.JFrame {
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         clipboard.setContents(stringSelection, null);
 
-//        JOptionPane.showMessageDialog(this, "Hex code copied to clipboard: " + hexCode,
-//                "Copied", JOptionPane.INFORMATION_MESSAGE);
         Notifications.getInstance().show(Notifications.Type.SUCCESS, Notifications.Location.TOP_CENTER, "Hex code copied to clipboard: " + hexCode + " Copied");
 
     }//GEN-LAST:event_copyButtonActionPerformed
@@ -254,8 +252,8 @@ public class ColorGeneratorForm extends javax.swing.JFrame {
         resetButton.setForeground(Color.WHITE);
 
         HexField.setForeground(colorPanel.getBackground()); // Contrast text with base color
-        JOptionPane.showMessageDialog(this, "Color palette applied to the UI!",
-                "Success", JOptionPane.INFORMATION_MESSAGE);
+
+        Notifications.getInstance().show(Notifications.Type.SUCCESS, Notifications.Location.TOP_CENTER, "Color palette applied to the UI!");
 
     }//GEN-LAST:event_applyButtonActionPerformed
 
