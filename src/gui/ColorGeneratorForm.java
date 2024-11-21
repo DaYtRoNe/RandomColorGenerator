@@ -27,18 +27,15 @@ public class ColorGeneratorForm extends javax.swing.JFrame {
         initComponents();
         Notifications.getInstance().setJFrame(this);
         generateButton.putClientProperty(FlatClientProperties.STYLE, "arc:23");
-//        HexField.putClientProperty(FlatClientProperties.STYLE, "arc:23");
         copyButton.putClientProperty(FlatClientProperties.STYLE, "arc:23");
     }
 
     private Color getContrastingColor(Color backgroundColor) {
-        // Calculate the brightness of the background color
         int brightness = (int) Math.sqrt(
                 backgroundColor.getRed() * backgroundColor.getRed() * 0.241
                 + backgroundColor.getGreen() * backgroundColor.getGreen() * 0.691
                 + backgroundColor.getBlue() * backgroundColor.getBlue() * 0.068
         );
-        // Return black or white text color based on brightness
         return brightness > 130 ? Color.BLACK : Color.WHITE;
     }
 
@@ -293,29 +290,23 @@ public class ColorGeneratorForm extends javax.swing.JFrame {
     private void generateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateButtonActionPerformed
         Random random = new Random();
 
-        // Base color
         int baseRed = random.nextInt(256);
         int baseGreen = random.nextInt(256);
         int baseBlue = random.nextInt(256);
         Color baseColor = new Color(baseRed, baseGreen, baseBlue);
 
-        // Generate palette colors with slight variations
         Color color1 = new Color((baseRed + 30) % 256, (baseGreen + 60) % 256, (baseBlue + 90) % 256);
         Color color2 = new Color((baseRed + 60) % 256, (baseGreen + 30) % 256, (baseBlue + 45) % 256);
         Color color3 = new Color((baseRed + 90) % 256, (baseGreen + 45) % 256, (baseBlue + 60) % 256);
 
-        // Apply the base color to the main panel
         colorPanel.setBackground(baseColor);
 
-        // Apply palette colors to preview panels
         color1Panel.setBackground(color1);
         color2Panel.setBackground(color2);
         color3Panel.setBackground(color3);
 
-        // Display the base color's hex code
         HexField.setText(String.format("#%02x%02x%02x", baseRed, baseGreen, baseBlue).toUpperCase());
 
-        // Display hex codes in the text fields
         color1Field.setText(String.format("#%02x%02x%02x", color1.getRed(), color1.getGreen(), color1.getBlue()).toUpperCase());
         color2Field.setText(String.format("#%02x%02x%02x", color2.getRed(), color2.getGreen(), color2.getBlue()).toUpperCase());
         color3Field.setText(String.format("#%02x%02x%02x", color3.getRed(), color3.getGreen(), color3.getBlue()).toUpperCase());
@@ -323,7 +314,7 @@ public class ColorGeneratorForm extends javax.swing.JFrame {
     }//GEN-LAST:event_generateButtonActionPerformed
 
     private void copyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copyButtonActionPerformed
-        String hexCode = HexField.getText(); // Get the hex code from the label
+        String hexCode = HexField.getText();
         StringSelection stringSelection = new StringSelection(hexCode);
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         clipboard.setContents(stringSelection, null);
@@ -344,7 +335,7 @@ public class ColorGeneratorForm extends javax.swing.JFrame {
         generateButton.setBackground(color3Panel.getBackground());
         generateButton.setForeground(getContrastingColor(generateButton.getBackground()));
 
-        HexField.setForeground(colorPanel.getBackground()); // Contrast text with base color
+        HexField.setForeground(colorPanel.getBackground());
 
         Notifications.getInstance().show(Notifications.Type.SUCCESS, Notifications.Location.TOP_CENTER, "Color palette applied to the UI!");
 
@@ -378,7 +369,7 @@ public class ColorGeneratorForm extends javax.swing.JFrame {
     }//GEN-LAST:event_resetButtonActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String hexCode = color1Field.getText(); // Get the hex code from the label
+        String hexCode = color1Field.getText();
         StringSelection stringSelection = new StringSelection(hexCode);
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         clipboard.setContents(stringSelection, null);
@@ -387,7 +378,7 @@ public class ColorGeneratorForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        String hexCode = color2Field.getText(); // Get the hex code from the label
+        String hexCode = color2Field.getText();
         StringSelection stringSelection = new StringSelection(hexCode);
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         clipboard.setContents(stringSelection, null);
@@ -396,7 +387,7 @@ public class ColorGeneratorForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        String hexCode = color3Field.getText(); // Get the hex code from the label
+        String hexCode = color3Field.getText();
         StringSelection stringSelection = new StringSelection(hexCode);
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         clipboard.setContents(stringSelection, null);
