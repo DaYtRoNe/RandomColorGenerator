@@ -265,6 +265,11 @@ public class ColorGeneratorForm extends javax.swing.JFrame {
         // Display the base color's hex code
         HexField.setText(String.format("#%02x%02x%02x", baseRed, baseGreen, baseBlue).toUpperCase());
 
+        // Display hex codes in the text fields
+        color1Field.setText(String.format("#%02x%02x%02x", color1.getRed(), color1.getGreen(), color1.getBlue()).toUpperCase());
+        color2Field.setText(String.format("#%02x%02x%02x", color2.getRed(), color2.getGreen(), color2.getBlue()).toUpperCase());
+        color3Field.setText(String.format("#%02x%02x%02x", color3.getRed(), color3.getGreen(), color3.getBlue()).toUpperCase());
+
     }//GEN-LAST:event_generateButtonActionPerformed
 
     private void copyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copyButtonActionPerformed
@@ -279,7 +284,7 @@ public class ColorGeneratorForm extends javax.swing.JFrame {
 
     private void applyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_applyButtonActionPerformed
         hexLabel.setForeground(getContrastingColor(colorPanel.getBackground()));
-        
+
         applyButton.setBackground(color1Panel.getBackground());
         applyButton.setForeground(getContrastingColor(applyButton.getBackground()));
 
@@ -313,6 +318,10 @@ public class ColorGeneratorForm extends javax.swing.JFrame {
 
         HexField.setForeground(null);
         HexField.setText("");
+        
+        color1Field.setText("");
+        color2Field.setText("");
+        color3Field.setText("");
 
         Notifications.getInstance().show(Notifications.Type.SUCCESS, Notifications.Location.TOP_CENTER, "Colors reset to default!");
 
