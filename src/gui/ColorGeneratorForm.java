@@ -158,6 +158,11 @@ public class ColorGeneratorForm extends javax.swing.JFrame {
         });
 
         resetButton.setText("Reset Colors");
+        resetButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resetButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -256,6 +261,29 @@ public class ColorGeneratorForm extends javax.swing.JFrame {
         Notifications.getInstance().show(Notifications.Type.SUCCESS, Notifications.Location.TOP_CENTER, "Color palette applied to the UI!");
 
     }//GEN-LAST:event_applyButtonActionPerformed
+
+    private void resetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetButtonActionPerformed
+        // Reset colors to default
+        generateButton.setBackground(null);
+        generateButton.setForeground(null);
+
+        applyButton.setBackground(null);
+        applyButton.setForeground(null);
+
+        resetButton.setBackground(null);
+        resetButton.setForeground(null);
+
+        colorPanel.setBackground(null);
+        color1Panel.setBackground(null);
+        color2Panel.setBackground(null);
+        color3Panel.setBackground(null);
+
+        HexField.setForeground(null);
+        HexField.setText("");
+
+        Notifications.getInstance().show(Notifications.Type.SUCCESS, Notifications.Location.TOP_CENTER, "Colors reset to default!");
+
+    }//GEN-LAST:event_resetButtonActionPerformed
 
     /**
      * @param args the command line arguments
