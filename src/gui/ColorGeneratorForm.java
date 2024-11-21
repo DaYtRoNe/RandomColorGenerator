@@ -30,6 +30,18 @@ public class ColorGeneratorForm extends javax.swing.JFrame {
 //        HexField.putClientProperty(FlatClientProperties.STYLE, "arc:23");
         copyButton.putClientProperty(FlatClientProperties.STYLE, "arc:23");
     }
+    
+    private Color getContrastingColor(Color backgroundColor) {
+    // Calculate the brightness of the background color
+    int brightness = (int) Math.sqrt(
+        backgroundColor.getRed() * backgroundColor.getRed() * 0.241 +
+        backgroundColor.getGreen() * backgroundColor.getGreen() * 0.691 +
+        backgroundColor.getBlue() * backgroundColor.getBlue() * 0.068
+    );
+    // Return black or white text color based on brightness
+    return brightness > 130 ? Color.BLACK : Color.WHITE;
+}
+
 
     /**
      * This method is called from within the constructor to initialize the form.
