@@ -151,6 +151,11 @@ public class ColorGeneratorForm extends javax.swing.JFrame {
         palettePanel.add(color3Panel);
 
         applyButton.setText("Apply Palette");
+        applyButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                applyButtonActionPerformed(evt);
+            }
+        });
 
         resetButton.setText("Reset Colors");
 
@@ -236,6 +241,23 @@ public class ColorGeneratorForm extends javax.swing.JFrame {
         Notifications.getInstance().show(Notifications.Type.SUCCESS, Notifications.Location.TOP_CENTER, "Hex code copied to clipboard: " + hexCode + " Copied");
 
     }//GEN-LAST:event_copyButtonActionPerformed
+
+    private void applyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_applyButtonActionPerformed
+        // Apply palette colors to other UI components
+        generateButton.setBackground(color1Panel.getBackground());
+        generateButton.setForeground(Color.WHITE);
+
+        applyButton.setBackground(color2Panel.getBackground());
+        applyButton.setForeground(Color.WHITE);
+
+        resetButton.setBackground(color3Panel.getBackground());
+        resetButton.setForeground(Color.WHITE);
+
+        HexField.setForeground(colorPanel.getBackground()); // Contrast text with base color
+        JOptionPane.showMessageDialog(this, "Color palette applied to the UI!",
+                "Success", JOptionPane.INFORMATION_MESSAGE);
+
+    }//GEN-LAST:event_applyButtonActionPerformed
 
     /**
      * @param args the command line arguments
