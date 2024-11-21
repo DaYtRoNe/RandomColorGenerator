@@ -94,6 +94,7 @@
         <Component class="javax.swing.JButton" name="generateButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Generate Color"/>
+            <Property name="toolTipText" type="java.lang.String" value="Click to generate Color"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="generateButtonActionPerformed"/>
@@ -210,6 +211,7 @@
         <Component class="javax.swing.JButton" name="applyButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Apply Palette"/>
+            <Property name="toolTipText" type="java.lang.String" value="Click to add colors to the components"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="applyButtonActionPerformed"/>
@@ -218,6 +220,7 @@
         <Component class="javax.swing.JButton" name="resetButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Reset Colors"/>
+            <Property name="toolTipText" type="java.lang.String" value="Click here to set all default"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="resetButtonActionPerformed"/>

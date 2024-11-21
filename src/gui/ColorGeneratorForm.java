@@ -62,6 +62,7 @@ public class ColorGeneratorForm extends javax.swing.JFrame {
         hexLabel.setText("Click 'Generate Color' to Start!");
 
         generateButton.setText("Generate Color");
+        generateButton.setToolTipText("Click to generate Color");
         generateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 generateButtonActionPerformed(evt);
@@ -151,6 +152,7 @@ public class ColorGeneratorForm extends javax.swing.JFrame {
         palettePanel.add(color3Panel);
 
         applyButton.setText("Apply Palette");
+        applyButton.setToolTipText("Click to add colors to the components");
         applyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 applyButtonActionPerformed(evt);
@@ -158,6 +160,7 @@ public class ColorGeneratorForm extends javax.swing.JFrame {
         });
 
         resetButton.setText("Reset Colors");
+        resetButton.setToolTipText("Click here to set all default");
         resetButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 resetButtonActionPerformed(evt);
