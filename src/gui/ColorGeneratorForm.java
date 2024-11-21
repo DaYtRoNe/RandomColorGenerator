@@ -200,16 +200,29 @@ public class ColorGeneratorForm extends javax.swing.JFrame {
 
     private void generateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_generateButtonActionPerformed
         Random random = new Random();
-        int red = random.nextInt(256);
-        int green = random.nextInt(256);
-        int blue = random.nextInt(256);
-        Color randomColor = new Color(red, green, blue);
 
-        // Set the random color to the panel
-        colorPanel.setBackground(randomColor);
+        // Base color
+        int baseRed = random.nextInt(256);
+        int baseGreen = random.nextInt(256);
+        int baseBlue = random.nextInt(256);
+        Color baseColor = new Color(baseRed, baseGreen, baseBlue);
 
-        // Display the hex code of the color
-        HexField.setText(String.format("#%02x%02x%02x", red, green, blue).toUpperCase());
+        // Generate palette colors with slight variations
+        Color color1 = new Color((baseRed + 30) % 256, (baseGreen + 60) % 256, (baseBlue + 90) % 256);
+        Color color2 = new Color((baseRed + 60) % 256, (baseGreen + 30) % 256, (baseBlue + 45) % 256);
+        Color color3 = new Color((baseRed + 90) % 256, (baseGreen + 45) % 256, (baseBlue + 60) % 256);
+
+        // Apply the base color to the main panel
+        colorPanel.setBackground(baseColor);
+
+        // Apply palette colors to preview panels
+        color1Panel.setBackground(color1);
+        color2Panel.setBackground(color2);
+        color3Panel.setBackground(color3);
+
+        // Display the base color's hex code
+        HexField.setText(String.format("#%02x%02x%02x", baseRed, baseGreen, baseBlue).toUpperCase());
+
     }//GEN-LAST:event_generateButtonActionPerformed
 
     private void copyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copyButtonActionPerformed
